@@ -1,13 +1,15 @@
 import React, { useState } from 'react'
 import './UserProfile.css'
 import {useDispatch} from 'react-redux'
-import { updateProfile } from '../../api'
+import { updateProfile } from '../../actions/users.js'
+import { useNavigate } from 'react-router-dom'
 const EditProfileForm = ({currentUser, setSwitch}) => {
 
     const [name, setName] = useState(currentUser?.result?.name)
     const [about, setAbout] = useState(currentUser?.result?.about)
     const [tags, setTags] = useState('')
     const dispatch= useDispatch()
+    const navigate = useNavigate()
 
     const handleSubmit = (e) =>{
         e.preventDefault()
@@ -16,8 +18,9 @@ const EditProfileForm = ({currentUser, setSwitch}) => {
         } else{
             dispatch(updateProfile(currentUser?.result?._id, {name, about, tags}))
         }
+        navigate(`/Users/${currentUser?.result?._id}`)
         setSwitch(false)
-        window.location.reload()
+        // window.location.reload()
     }
 
   return (

@@ -4,6 +4,7 @@ import {useSelector, useDispatch} from 'react-redux'
 
 import logo from '../../assets/logo.jpg'
 import search from '../../assets/search.svg'
+import dropdown from '../../assets/dropdown.svg'
 import Avatar from '../../components/Avatar/Avatar.jsx'
 import './Navbar.css'
 import { setCurrentUser } from '../../actions/currentUser.js'
@@ -14,7 +15,6 @@ export const Navbar = () => {
   const dispatch = useDispatch()
   var User =useSelector((state) => (state.currentUserReducer))
   const navigate = useNavigate()
-
   
   const handleLogOut = () => {
     dispatch({type:'LOGOUT'});
@@ -46,6 +46,20 @@ export const Navbar = () => {
                 <input type="text" placeholder='Search....'/>
                 <img src={search} alt='search' width="18" className="search-icon" />
             </form>
+            {/* <div class="lang-box">
+              <button class="dropbtn">Lang <img src={dropdown} width="18" /></button>
+              <div class="langs">
+                <a href="/Auth">English</a>
+                <a href="/Users">Hindi</a>
+                <a href="/Tags">Spanish</a>
+                <a href="/Questions">Portugese</a>
+                <a href="/Questions">Chinese</a>
+                <a href="/Questions">French</a>
+              </div>
+            </div> */}
+            <div>
+              <Navbar.Brand></Navbar.Brand>
+            </div>
             { User ==null ? 
                 <Link to='/Auth' className='nav-item nav-links'>Log in</Link>:
                 <>

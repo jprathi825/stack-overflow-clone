@@ -15,7 +15,7 @@ export const signup = (authData, navigate) => async(dispatch) => {
 export const login = (authData, navigate) => async(dispatch) => {
     try {
         const {data} =await api.logIn(authData)
-        console.log(data)
+        // console.log(data)
         dispatch({type: 'AUTH',data})
         dispatch(setCurrentUser(JSON.parse(localStorage.getItem('Profile'))))
         navigate('/')
@@ -23,3 +23,12 @@ export const login = (authData, navigate) => async(dispatch) => {
         console.log(error)
     }
 }
+
+export const sendEmail = (email) => async(dispatch) =>{
+    try {
+        const {data} =await api.sendEmail(email)
+        console.log(data)
+    } catch (error) {
+        console.log(error)
+    }
+} 

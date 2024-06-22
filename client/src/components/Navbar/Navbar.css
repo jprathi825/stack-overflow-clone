@@ -68,3 +68,46 @@
 .nav-links:hover{
     background-color: #d3e4eb;
 }
+.dropbtn{
+    background-color: transparent;
+    color: rgb(69,69,69);
+    padding: 16px;
+    font-size: 16px;
+    border: none;
+    border-radius: 15px;
+}
+
+.lang-box{
+    position: relative;
+    display: inline-block;
+    margin-right: 50px;
+}
+
+.langs{
+    display: none;
+    position: absolute;
+    background-color: #f1f1f1;
+    min-width: 100px;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+    z-index: 1;
+}
+
+.langs a{
+    background-color: #707070;
+    color: white;
+    padding: 12px 16px ;
+    text-decoration: none;
+    display: block;
+}
+
+.langs a:hover{
+    background-color: black;
+}
+
+.lang-box:hover .langs{
+    display: block;
+}
+
+.lang-box:hover .dropbtn{
+    background-color: rgb(226, 226, 226);
+}
