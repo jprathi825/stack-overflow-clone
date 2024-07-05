@@ -57,9 +57,6 @@ export const Navbar = () => {
                 <a href="/Questions">French</a>
               </div>
             </div> */}
-            <div>
-              <Navbar.Brand></Navbar.Brand>
-            </div>
             { User ==null ? 
                 <Link to='/Auth' className='nav-item nav-links'>Log in</Link>:
                 <>
